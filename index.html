@@ -6,13 +6,16 @@
     <title>Be My Valentine?</title>
     <style>
         body {
-            background-color: #ffebf0;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+    background-color: #ffebf0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: auto; /* Enable vertical scrolling */
+    min-height: 100vh; /* Ensure the body takes at least full height */
+}
+
         h1 {
             color: #e6005c;
         }
@@ -85,7 +88,14 @@
 #yes-btn:hover {
     background-color: #ff3385;
 }
-
+@media (max-width: 600px) {
+    #yes-btn {
+        width: 80%; /* Make button smaller on mobile screens */
+    }
+    .gallery img {
+        width: 80%; /* Scale images on smaller screens */
+    }
+}
         /* Pop-Up Style */
         #popup {
             display: none;
