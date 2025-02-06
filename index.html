@@ -91,17 +91,12 @@
             flex-direction: column;
             z-index: 1000;
         }
-        #popup img {
-            max-width: 60%;
-            border-radius: 10px;
-            margin-bottom: 20px; /* Space between image and message */
-        }
         #popup .message {
             color: #fff;
             font-size: 24px;
             text-align: center;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 20px; /* Adjusted spacing */
             font-family: 'Arial', sans-serif;
         }
     </style>
@@ -140,17 +135,15 @@
     <!-- Yes Button -->
     <button id="yes-btn" onclick="showPopup()">Yes! ❤️</button>
 
-     <!-- Pop-Up -->
+    <!-- Pop-Up Without Image -->
     <div id="popup">
-        <img src="https://i.imgur.com/03TBV4Y.jpeg" alt="Special Image">
         <div class="message">
-            <p>You made the rich choice! FREE BOBA!🧋</p>
+            <p>You made the right choice!!FREE BOBA FOREVER! 🧋💖</p>
         </div>
     </div>
 
-
     <script>
-        // Function to show the pop-up image when "Yes" button is clicked
+        // Function to show the pop-up message when "Yes" button is clicked
         function showPopup() {
             document.getElementById("popup").style.display = "flex";
         }
