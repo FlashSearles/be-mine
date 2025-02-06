@@ -10,6 +10,8 @@
             text-align: center;
             font-family: Arial, sans-serif;
             padding: 20px;
+            position: relative;
+            overflow: hidden;
         }
         h1 {
             color: #e6005c;
@@ -33,14 +35,30 @@
         .gallery img:hover {
             transform: scale(1.1);
         }
-        .heart {
-            width: 100px;
-            margin-top: 20px;
-            animation: heartbeat 1s infinite alternate;
+        .heart-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            animation: floatHearts 5s infinite linear;
         }
-        @keyframes heartbeat {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
+        .heart {
+            font-size: 24px;
+            color: #e6005c;
+            animation: floatUp 3s infinite ease-in-out;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        @keyframes floatHearts {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(-50%) translateY(-200px); }
+        }
+        .music-player {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -60,6 +78,21 @@
         <img src="https://i.imgur.com/o5U07kE.jpeg" alt="Photo 8">
     </div>
 
-    <img class="heart" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Heart_coraz%C3%B3n.svg/512px-Heart_coraz%C3%B3n.svg.png" alt="Heart">
+    <!-- Floating Hearts Animation -->
+    <div class="heart-container">
+        <span class="heart">❤️</span>
+        <span class="heart">💖</span>
+        <span class="heart">💕</span>
+        <span class="heart">💗</span>
+        <span class="heart">💞</span>
+    </div>
+
+    <!-- Background Music -->
+    <div class="music-player">
+        <audio controls autoplay loop>
+            <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Keys_of_Moon/Love_Theme/Keys_of_Moon_-_Love_Theme.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 </body>
 </html>
