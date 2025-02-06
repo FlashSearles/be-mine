@@ -27,11 +27,18 @@
             margin-top: 20px;
         }
         .gallery img {
-            width: 30%;
-            max-width: 200px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
+    width: 30%; /* On larger screens */
+    max-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .gallery img {
+        width: 80%; /* On smaller screens, scale down */
+        max-width: 100%;
+    }
+}
         .gallery img:hover {
             transform: scale(1.1);
         }
