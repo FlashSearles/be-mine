@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meisy Be My Valentine?</title>
+    <title>Be My Valentine?</title>
     <style>
         body {
             background-color: #ffebf0;
@@ -60,6 +60,46 @@
         .music-player {
             margin-top: 20px;
         }
+
+        /* Style for the button */
+        #yes-btn {
+            background-color: #e6005c;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        #yes-btn:hover {
+            background-color: #ff3385;
+        }
+
+        /* Pop-Up Style */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        #popup img {
+            max-width: 80%;
+            border-radius: 10px;
+        }
+        #popup .message {
+            color: #fff;
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -88,11 +128,27 @@
     </div>
 
     <!-- Background Music -->
-    <div class="music-player">
-        <audio id="bg-music" autoplay loop>
-            <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Keys_of_Moon/Love_Theme/Keys_of_Moon_-_Love_Theme.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <audio id="bg-music" autoplay loop>
+        <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Keys_of_Moon/Love_Theme/Keys_of_Moon_-_Love_Theme.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Yes Button -->
+    <button id="yes-btn" onclick="showPopup()">Yes! ❤️</button>
+
+    <!-- Pop-Up -->
+    <div id="popup">
+        <img src="https://i.imgur.com/03TBV4Y.jpeg" alt="Special Image">
+        <div class="message">
+            <p>You made the rich choice! FREE BOBA!🧋</p>
+        </div>
     </div>
+
+    <script>
+        // Function to show the pop-up image when "Yes" button is clicked
+        function showPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+    </script>
 </body>
 </html>
