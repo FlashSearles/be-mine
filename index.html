@@ -63,19 +63,21 @@
 
         /* Style for the button */
         #yes-btn {
-            background-color: #e6005c;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 30px;
-        }
+    background-color: #e6005c;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    max-width: 100%; /* Ensure it scales on mobile */
+    box-sizing: border-box; /* Prevents padding from exceeding the width */
+}
 
-        #yes-btn:hover {
-            background-color: #ff3385;
-        }
+#yes-btn:hover {
+    background-color: #ff3385;
+}
 
         /* Pop-Up Style */
         #popup {
